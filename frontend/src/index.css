@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.min-h-85-vh {
+	min-height: 85vh;
+}
+
+.hover-focus-animation {
+	@apply hover:drop-shadow-xl hover:-translate-y-1 hover:scale-105 disabled:drop-shadow disabled:translate-y-0 disabled:scale-100
+}

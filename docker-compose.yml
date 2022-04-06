@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  frontend:
+    container_name: soccer_frontend
+    build: ./frontend
+    restart: on-failure
+    env_file: ./.env
+    ports:
+      - $REACT_PORT:3000
+  backend:
+    container_name: soccer_backend
+    build: ./backend
+    restart: on-failure
+    env_file: ./.env
+    ports:
+      - $SPRING_BOOT_PORT:8080
+    volumes:
+      - .m2:/root/.m2
+    stdin_open: true
+    tty: true

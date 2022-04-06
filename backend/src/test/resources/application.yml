@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:h2:file:./db/test_db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=true
+    # url: jdbc:mysql://localhost:3306/user_db
+    username: root
+    password: root
+
+  jpa:
+    #    show_sql: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true
+        id:
+          new_generator_mappings: false
+
+server:
+  port: 8080 # This is the default port anyway, but you can change it here
+
+security:
+  jwt:
+    token:
+      secret-key: 6TS6^Ng@^@!A&wCb_^pQ_ # this secret key is used in JWT token, feel free to change it
+      expire-length: 300000 # 5 minutes duration by default: 5 minutes * 60 seconds * 1000 milliseconds
+
